@@ -16,55 +16,27 @@ body, html {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top left, #D73B31 25%, transparent 65%),
-                radial-gradient(circle at top right, #FF9800 20%, transparent 60%),
-                radial-gradient(circle at bottom left, #6A1B9A 22%, transparent 62%),
-                radial-gradient(circle at bottom right, #0D47A1 30%, transparent 55%),
-                radial-gradient(circle at center, #3F0E40 50%, transparent 70%);
+    background: radial-gradient(circle at top left, rgba(50, 0, 50, 1) 35%, transparent 65%), 
+                radial-gradient(circle at top right, rgba(255, 180, 0, 1) 25%, transparent 55%),
+                radial-gradient(circle at bottom left, rgba(0, 50, 200, 1) 30%, transparent 65%),
+                radial-gradient(circle at bottom right, rgba(0, 255, 255, 1) 40%, transparent 60%);
     background-size: 200% 200%;
-    animation: gradientMove 5s infinite alternate ease-in-out, 
-               gradientResize 7s infinite alternate ease-in-out,
-               colorShift 10s infinite alternate ease-in-out,
-               waveMotion 6s infinite alternate ease-in-out,
-               flicker 4s infinite alternate ease-in-out;
+    animation: gradientFlow 6s infinite ease-in-out alternate, 
+               colorShift 5.2s infinite ease-in-out alternate;
 }
 
-@keyframes gradientMove {
-    0% { background-position: 45% 45%; }
-    20% { background-position: 50% 40%; }
-    40% { background-position: 40% 50%; }
-    60% { background-position: 55% 42%; }
-    80% { background-position: 42% 55%; }
-    100% { background-position: 50% 50%; }
-}
-
-@keyframes gradientResize {
-    0% { background-size: 180% 180%; }
-    25% { background-size: 210% 210%; }
-    50% { background-size: 230% 230%; }
-    75% { background-size: 190% 190%; }
-    100% { background-size: 220% 220%; }
+@keyframes gradientFlow {
+    0% { background-position: 45% 55%; }
+    25% { background-position: 50% 50%; }
+    50% { background-position: 55% 45%; }
+    75% { background-position: 50% 48%; }
+    100% { background-position: 45% 55%; }
 }
 
 @keyframes colorShift {
     0% { filter: hue-rotate(0deg); }
-    25% { filter: hue-rotate(-20deg); }
-    50% { filter: hue-rotate(30deg); }
-    75% { filter: hue-rotate(-10deg); }
-    100% { filter: hue-rotate(15deg); }
-}
-
-@keyframes waveMotion {
-    0% { transform: scale(1) rotate(0deg); }
-    25% { transform: scale(1.02) rotate(-1deg); }
-    50% { transform: scale(1.05) rotate(1deg); }
-    75% { transform: scale(1.03) rotate(-0.5deg); }
-    100% { transform: scale(1) rotate(0deg); }
-}
-
-@keyframes flicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.95; }
+    50% { filter: hue-rotate(15deg); }
+    100% { filter: hue-rotate(-10deg); }
 }
 
 .content {
@@ -74,12 +46,12 @@ body, html {
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 2;
-    animation: textGlow 3s infinite alternate ease-in-out;
+    animation: textGlow 1.2s infinite alternate ease-in-out;
 }
 
 @keyframes textGlow {
-    0% { text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5); }
-    100% { text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.9); }
+    0% { text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); }
+    100% { text-shadow: 0px 0px 18px rgba(255, 255, 255, 1); }
 }
 
 h1 {
@@ -89,5 +61,5 @@ h1 {
 
 p {
     font-size: 0.7rem;
-    opacity: 0.8;
+    opacity: 0.85;
 }
